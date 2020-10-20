@@ -36,9 +36,16 @@ def hsv2rgb(h, s, v):
 # np. widzimy, że po lewej stronie (dla v = 0) powinien być kolor zielony a w środku niebieski (dla v = 0.5),
 # a wszystkie punkty pomiędzy należy interpolować liniowo (proporcjonalnie). 
 
+def lin(start, end):
+    diff = (np.array(end) - np.array(start))
+    return lambda x: tuple(diff * x)
+
 def gradient_rgb_bw(v):
-    #TODO
-    return (0, 0, 0)
+    start = (0,0,0)
+    end = (1,1,1)
+
+    value = lin(start, end)(v)
+    return value
 
 
 def gradient_rgb_gbr(v):
