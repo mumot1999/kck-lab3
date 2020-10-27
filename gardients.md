@@ -25,8 +25,7 @@ Funkcje do zaimplementowania:
 ```python
 #konwerter: nie trzeba implementować samemu, można wykorzystać funkcję z bilbioteki
 def hsv2rgb(h, s, v):
-    #TODO
-    return (h, s, v)
+    return colors.hsv_to_rgb((h, s, v))
 
 # poniżej znajdują się funkcje modelujące kolejne gradienty z zadania.
 # v to pozycja na osi ox: v jest od 0 do 1. Zewnetrzna funkcja wywołuje te metody podając
@@ -94,21 +93,20 @@ def gradient_rgb_wb_custom(v):
 
 def gradient_hsv_bw(v):
     #TODO
-    return hsv2rgb(0, 0, 0)
+    return hsv2rgb(1, 0, v)
 
 
 def gradient_hsv_gbr(v):
-    #TODO
-    return hsv2rgb(0, 0, 0)
+    return hsv2rgb((0.35 + v)*0.76, 1, 1)
 
 def gradient_hsv_unknown(v):
     #TODO
-    return hsv2rgb(0, 0, 0)
+    return hsv2rgb(0.3 - v * 0.3, 0.5, 1)
 
 
 def gradient_hsv_custom(v):
     #TODO
-    return hsv2rgb(0, 0, 0)
+    return hsv2rgb(v, 1, 1)
 ```
 
 ```python
