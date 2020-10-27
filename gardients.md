@@ -84,8 +84,12 @@ def gradient_rgb_gbr_full(v):
 
 
 def gradient_rgb_wb_custom(v):
-    #TODO
-    return (0, 0, 0)
+    return get_color_function({
+        40: lin((0,1,0.5), (1,1,1)),
+        50: lin((1,1,1), (1,0.5,0)),
+        90: lin((1,0.5,0), (1,0,0)),
+        100: lin((1,0,0), (0,1,0))
+    })(v)
 
 
 def gradient_hsv_bw(v):
